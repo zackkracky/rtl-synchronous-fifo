@@ -38,10 +38,7 @@ The project was developed as part of my RTL Design & Verification learning roadm
 
 ```
 
-<p align="center">
-  <img src="assets/fifo_block_diagram.png" width="700">
-</p>
-
+![Parameterized FIFO Block Diagram](assets/fifo_block_diagram.png)
 ```
 
 ---
