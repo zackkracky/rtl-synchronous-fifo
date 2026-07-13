@@ -38,20 +38,9 @@ The project was developed as part of my RTL Design & Verification learning roadm
 
 ```
 
-                 +---------------------------+
-                 |   Parameterized FIFO      |
-                 |                           |
-din -----------> |                           | ---------> dout
-wr_en ---------> |                           |
-rd_en ---------> |                           |
-clk -----------> |                           |
-rst -----------> |                           |
-                 |                           |
-                 | full                      |
-                 | empty                     |
-                 | overflow                  |
-                 | underflow                 |
-                 +---------------------------+
+<p align="center">
+  <img src="assets/fifo_block_diagram.png" width="700">
+</p>
 
 ```
 
@@ -209,65 +198,7 @@ scripts/run_basic.bat
 
 ## Example Waveforms
 
-### Basic FIFO Operation
-
-*(Insert screenshot here)*
-
-```
-
-docs/basic_waveform.png
-
-```
-
----
-
-### Overflow Test
-
-*(Insert screenshot here)*
-
-```
-
-docs/overflow_waveform.png
-
-```
-
----
-
-### Underflow Test
-
-*(Insert screenshot here)*
-
-```
-
-docs/underflow_waveform.png
-
-```
-
----
-
-### Simultaneous Read/Write
-
-*(Insert screenshot here)*
-
-```
-
-docs/simultaneous_waveform.png
-
-```
-
----
-
-### Pointer Wrap-around
-
-*(Insert screenshot here)*
-
-```
-
-docs/wraparound_waveform.png
-
-```
-
----
+Check the wave sub folder.
 
 ## Design Decisions
 
