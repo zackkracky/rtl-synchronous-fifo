@@ -38,7 +38,7 @@ The project was developed as part of my RTL Design & Verification learning roadm
 
 
 <p align="center">
-  <img src="assets/fifo_block_diagram.png" width="700">
+  <img src="assets/fifo_block_diagram.png" width="500">
 </p>
 
 ## Internal Architecture
