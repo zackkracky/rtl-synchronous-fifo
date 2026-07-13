@@ -1,0 +1,19 @@
+# Simulation Outputs
+sim/
+
+# Waveforms
+wave/*.vcd
+
+# GTKWave
+*.gtkw
+
+# Logs
+*.log
+*.out
+
+# VS Code
+.vscode/settings.json
+
+# OS Files
+.DS_Store
+Thumbs.db
