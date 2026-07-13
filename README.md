@@ -250,7 +250,7 @@ This matches expected synchronous FIFO behavior.
 
 ---
 
-## Lessons Learned
+## Takeaways
 
 Through this project I gained practical experience with:
 
