@@ -38,29 +38,16 @@ The project was developed as part of my RTL Design & Verification learning roadm
 
 
 <p align="center">
-  <img src="assets/fifo_block_diagram.png" width="500">
+  <img src="rtl-synchronous-fifo/assets/fifo_block_diagram.png" width="500">
 </p>
 
 ## Internal Architecture
 
 The FIFO uses a circular buffer architecture.
 
-```
-
-                   +----------------------+
-                   |      memory[]        |
-                   +----------------------+
-                   |                      |
-wr_ptr ----------->|                      |
-                   |                      |
-rd_ptr ----------->|                      |
-                   +----------------------+
-
-                       count register
-
-            full / empty / overflow / underflow
-
-```
+<p align="center">
+  <img src="rtl-synchronous-fifo/assets/Internal Architecture.png" width="500">
+</p>
 
 ### Internal Components
 
