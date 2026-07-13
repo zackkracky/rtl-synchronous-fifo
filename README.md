@@ -38,7 +38,7 @@ The project was developed as part of my RTL Design & Verification learning roadm
 
 
 <p align="center">
-  <img src="rtl-synchronous-fifo/assets/fifo_block_diagram.png">
+  <img src="assets/fifo_block_diagram.png" width="800">
 </p>
 
 ## Internal Architecture
@@ -46,7 +46,7 @@ The project was developed as part of my RTL Design & Verification learning roadm
 The FIFO uses a circular buffer architecture.
 
 <p align="center">
-  <img src="rtl-synchronous-fifo/assets/Internal Architecture.png">
+  <img src="assets/Internal Architecture.png" width="800">
 </p>
 
 ### Internal Components
