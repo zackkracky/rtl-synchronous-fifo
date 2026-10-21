@@ -140,11 +140,11 @@ The FIFO has been verified using multiple directed testbenches.
 
 | Test | Description | Status |
 |------|-------------|:------:|
-| Basic Read/Write | Verify FIFO ordering | ✅ |
-| Overflow | Verify writes to full FIFO | ✅ |
-| Underflow | Verify reads from empty FIFO | ✅ |
-| Simultaneous Read/Write | Verify concurrent operations | ✅ |
-| Pointer Wrap-around | Verify circular buffer | ✅ |
+| Basic Read/Write | Verify FIFO ordering | done |
+| Overflow | Verify writes to full FIFO | done |
+| Underflow | Verify reads from empty FIFO | done |
+| Simultaneous Read/Write | Verify concurrent operations | done |
+| Pointer Wrap-around | Verify circular buffer | done |
 
 ---
 
