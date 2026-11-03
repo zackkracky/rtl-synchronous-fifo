@@ -75,10 +75,10 @@ FIFO/
 │
 ├── tb/
 │   ├── fifo_tb.v
-│   ├── fifo_overflow_tb.v
-│   ├── fifo_underflow_tb.v
-│   ├── fifo_simultaneous_tb.v
-│   └── fifo_wraparound_tb.v
+│   ├── fifo_tb_overflow.v
+│   ├── fifo_tb_underflow.v
+│   ├── fifo_tb_simultaneous.v
+│   └── fifo_tb_wraparound.v
 │
 ├── scripts/
 │   ├── run_basic.bat
@@ -90,19 +90,27 @@ FIFO/
 │   └── score.py
 │
 ├── formal/
-│   ├── fifo_formal.sv
-│   ├── pilotA_fpv.tcl
-│   └── RESULTS.md
+│ ├── fifo_formal.sv
+│ ├── pilotA_fpv.tcl
+│ └── RESULTS.md
 │
 ├── mutants/
+│ ├── fifo_m1.v
+│ ├── fifo_m2.v
+│ ├── fifo_m3.v
+│ ├── fifo_m4.v
+│ ├── fifo_m5.v
+│ └── make_mutants.py
+│
 ├── ref/
+│ ├── fifo_kill_check.v
+│ └── fifo_ref_cov.sv
+│
 ├── prompts/
+│ ├── prompt_zero_shot.txt
+│ └── prompt_one_shot.txt
 │
 ├── docs/
-│
-├── wave/
-│
-├── sim/
 │
 ├── README.md
 ├── LICENSE
