@@ -85,7 +85,18 @@ FIFO/
 │   ├── run_overflow.bat
 │   ├── run_underflow.bat
 │   ├── run_simultaneous.bat
-│   └── run_wraparound.bat
+│   ├── run_wraparound.bat
+│   ├── run_pilot.sh
+│   └── score.py
+│
+├── formal/
+│   ├── fifo_formal.sv
+│   ├── pilotA_fpv.tcl
+│   └── RESULTS.md
+│
+├── mutants/
+├── ref/
+├── prompts/
 │
 ├── docs/
 │
@@ -145,6 +156,12 @@ The FIFO has been verified using multiple directed testbenches.
 | Underflow | Verify reads from empty FIFO | done |
 | Simultaneous Read/Write | Verify concurrent operations | done |
 | Pointer Wrap-around | Verify circular buffer | done |
+
+### Formal verification and mutation analysis
+
+Five properties written from the specification (full, empty, overflow, underflow, in-order data integrity) are proven unbounded in JasperGold on a 4-deep instance, and each of five hand-written mutants produces a counterexample. Two of the mutants (early write-pointer wrap, dropped data MSB) are caught only by the data-integrity property. Results and caveats: [`formal/RESULTS.md`](formal/RESULTS.md). Method and mutant list: [`docs/PILOT_A.md`](docs/PILOT_A.md).
+
+The comparison with LLM-generated UVM testbenches is planned and not run yet.
 
 ---
 
@@ -242,7 +259,7 @@ This matches expected synchronous FIFO behavior.
 
 - SystemVerilog implementation
 - Self-checking testbench
-- Assertions (SVA)
+- SVA assertions in simulation (formal properties already proven, see above)
 - Randomized verification
 - UVM verification environment
 - Asynchronous FIFO implementation
