@@ -75,6 +75,7 @@ FIFO/
 │
 ├── tb/
 │   ├── fifo_tb.v
+│   ├── fifo_tb_self.v
 │   ├── fifo_tb_overflow.v
 │   ├── fifo_tb_underflow.v
 │   ├── fifo_tb_simultaneous.v
@@ -155,7 +156,7 @@ FIFO/
 
 ## Verification
 
-The FIFO has been verified using multiple directed testbenches.
+The FIFO is verified three ways: directed testbenches for visual inspection, a self-checking testbench that compares every output against a reference model, and formal property proofs with mutation analysis (see below).
 
 | Test | Description | Status |
 |------|-------------|:------:|
@@ -164,6 +165,7 @@ The FIFO has been verified using multiple directed testbenches.
 | Underflow | Verify reads from empty FIFO | done |
 | Simultaneous Read/Write | Verify concurrent operations | done |
 | Pointer Wrap-around | Verify circular buffer | done |
+| Self-checking (`fifo_tb_self.v`) | Reference-model check on every cycle, directed + randomised | done |
 
 ### Formal verification and mutation analysis
 
@@ -178,7 +180,7 @@ The comparison with LLM-generated UVM testbenches is planned and not run yet.
 Compile:
 
 ```bash
-iverilog -o sim/fifo_basic rtl/fifo.v tb/fifo_basic_tb.v
+iverilog -o sim/fifo_basic rtl/fifo.v tb/fifo_tb.v
 ```
 
 Run:
@@ -190,7 +192,17 @@ vvp sim/fifo_basic
 Open GTKWave:
 
 ```bash
-gtkwave wave/fifo_basic.vcd
+gtkwave wave/fifo.vcd
+```
+
+### Self-checking run
+
+The self-checking testbench needs no waveform inspection: it prints `TEST PASSED`
+or `TEST FAILED` and exits non-zero on failure.
+
+```bash
+iverilog -g2012 -o sim/fifo_self rtl/fifo.v tb/fifo_tb_self.v
+vvp sim/fifo_self
 ```
 
 Or simply execute
