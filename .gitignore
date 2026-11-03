@@ -17,3 +17,14 @@ wave/*.vcd
 # OS Files
 .DS_Store
 Thumbs.db
+
+# Formal and Xcelium outputs (publish formal/RESULTS.md, not tool output)
+formal/jgproject/
+formal/out/
+xcelium.d/
+cov_work/
+logs/
+xrun.history
+xrun.key
+*.shm
+results.csv

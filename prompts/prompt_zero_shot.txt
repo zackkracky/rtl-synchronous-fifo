@@ -1,0 +1,21 @@
+You are a design verification engineer. Write a complete UVM 1.2 testbench in SystemVerilog for the DUT below.
+
+Hard requirements (the testbench is run by a script, so these are not optional):
+1. Output exactly two files: fifo_tb_pkg.sv (package with all UVM classes) and tb_top.sv (top module).
+2. Top module name: tb_top. Test class name: fifo_test. Instantiate the DUT as "dut" with DATA_WIDTH=8, DEPTH=16.
+3. Generate clock (10 ns period) and an active-high synchronous reset held for at least 2 cycles.
+4. Include: sequence item, sequence, sequencer, driver, monitor, agent, scoreboard with a reference model, environment, test.
+5. The scoreboard must check read data order, full, empty, overflow and underflow, and report every mismatch with `uvm_error.
+6. Run at least 2000 transactions with randomised wr_en, rd_en and din, then drop the objection.
+7. Do not modify the DUT.
+
+DUT specification:
+- Synchronous FIFO, parameters DATA_WIDTH, DEPTH.
+- Ports: clk, rst (active high, synchronous), wr_en, rd_en, din[DATA_WIDTH-1:0], dout[DATA_WIDTH-1:0] (registered), full, empty, overflow (registered, 1-cycle pulse), underflow (registered, 1-cycle pulse).
+- A write is accepted when wr_en && (!full || rd_en). A read is accepted when rd_en && !empty.
+- dout updates on the clock edge after an accepted read and holds otherwise.
+- overflow pulses one cycle after a rejected write; underflow pulses one cycle after a rejected read.
+- full = (occupancy == DEPTH); empty = (occupancy == 0).
+
+DUT source:
+<paste rtl/fifo.v here, unchanged>
