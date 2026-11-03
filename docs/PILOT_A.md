@@ -14,6 +14,8 @@ Why mutation score and not coverage alone: coverage says how much of the design 
 | `mutants/make_mutants.py` | Generates the 5 mutants. Each is one exact text replacement and must match exactly once |
 | `mutants/fifo_m1.v` .. `fifo_m5.v` | The generated mutants, committed so no Python is needed on a lab machine |
 | `ref/fifo_kill_check.v` | Plain-Verilog self-checking testbench. Its only job is proving every mutant is killable, i.e. not equivalent |
+
+> Not to be confused with `tb/fifo_tb_self.v`, the repo's general self-checking regression testbench. `ref/fifo_kill_check.v` exists only to prove the five mutants are non-equivalent; `tb/fifo_tb_self.v` is the everyday pass/fail check on the unmodified FIFO.
 | `ref/fifo_ref_cov.sv` | 6-bin reference covergroup bound into the DUT. Same yardstick for every testbench |
 | `formal/fifo_formal.sv` | 5 formal properties + 2 covers, written from the spec text |
 | `formal/pilotA_fpv.tcl` | JasperGold script: golden design, then each mutant |
