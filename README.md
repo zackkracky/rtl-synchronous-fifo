@@ -247,8 +247,12 @@ This matches expected synchronous FIFO behavior.
 ## Tools Used
 
 - Verilog HDL
+- SystemVerilog (formal properties, functional covergroup)
 - Icarus Verilog
 - GTKWave
+- JasperGold (formal property verification)
+- Python (mutant generation and log scoring)
+- Tcl (JasperGold automation)
 - Visual Studio Code
 - Git
 - GitHub
@@ -257,13 +261,11 @@ This matches expected synchronous FIFO behavior.
 
 ## Future Improvements
 
-- SystemVerilog implementation
-- Self-checking testbench
-- SVA assertions in simulation (formal properties already proven, see above)
-- Randomized verification
-- UVM verification environment
+- SVA assertions run in simulation (currently proven in formal only)
+- LLM-generated UVM testbench comparison (prompts and runner staged in `prompts/` and `scripts/`; not run yet)
+- Constrained-random UVM environment
 - Asynchronous FIFO implementation
-- Continuous Integration (GitHub Actions)
+- Continuous integration (GitHub Actions)
 
 ---
 
@@ -271,14 +273,13 @@ This matches expected synchronous FIFO behavior.
 
 Through this project I gained practical experience with:
 
-- RTL Design
-- Parameterized hardware modules
-- Circular buffer implementation
-- Pointer-based memory management
+- RTL design of a parameterized synchronous FIFO
+- Circular-buffer and pointer-based memory management
 - Synchronous sequential logic
-- Testbench development
-- Waveform debugging using GTKWave
-- Directed verification methodology
+- Directed testbench development and waveform debugging (GTKWave)
+- Writing a self-checking testbench against a reference model
+- Formal property verification with JasperGold (bounded vs unbounded proof)
+- Mutation analysis: building a labelled bug set and checking mutant non-equivalence
 
 ---
 
